@@ -9,13 +9,22 @@ class SmartHomeTest {
     @Test
     public void turnBulbOn_whenSwitchIsOn() {
         BulbSpy bulbSpy = new BulbSpy();
-        SwitchStub switchStub = new SwitchStub();
+        SwitchOnStub switchOnStub = new SwitchOnStub();
 
-        new SmartHome().run(bulbSpy, switchStub);
+        new SmartHome().run(bulbSpy, switchOnStub);
 
         assertTrue(bulbSpy.turnOn_wasCalled());
     }
 
+    @Test
+    void turnBulbOff_whenSwitchIsOff() {
+        BulbSpy bulbSpy = new BulbSpy();
+        SwitchOffStub switchOffStub = new SwitchOffStub();
+
+        new SmartHome().run(bulbSpy, switchOffStub);
+
+        assertTrue(bulbSpy.turnOff_wasCalled());
+    }
 }
 
 // OPTION RETURN - カーソルにあるエラーやWarningのヘルプ

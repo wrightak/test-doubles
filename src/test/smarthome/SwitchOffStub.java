@@ -1,8 +1,9 @@
 package smarthome;
 
-public class SwitchStub implements Switch {
+public class SwitchOffStub implements Switch {
+
     @Override
     public boolean isOn() {
-        return true;
+        return false;
     }
 }
